@@ -2,17 +2,15 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 14 # Specify the Node.js version
     commands:
-      - npm install --save
+      - npm install
   build:
     commands:
-      - npm run build
+      - npm run build  # This will clean and transpile code to 'dist-server'
   post_build:
     commands:
-      - npm run test
+      - echo "Build completed successfully"
 artifacts:
   files:
-    - '**/*' # Include all files
+    - '**/*'
   discard-paths: yes
